@@ -1,35 +1,30 @@
-# importing whole module
-import tkinter
-from tkinter import * 
-from tkinter.ttk import *
-  
-# importing strftime function to
-# retrieve system's time
-from time import strftime
-  
-# creating tkinter window
-root = Tk()
-root.title('Clock')
-  
-# This function is used to 
-# display time on the label
-def time():
-    string = strftime('%H:%M:%S %p')
-    lbl.config(text = string)
-    lbl.after(1000, time)
-  
-# Styling the label widget so that clock
-# will look more attractive
-lbl = Label(root, font = ('calibri', 40, 'bold'),
-            background = 'purple',
-            foreground = 'white')
-  
-# Placing clock at the centre
-# of the tkinter window
-lbl.pack(anchor = 'center')
-time()
-  
-mainloop()
+
+import sys
+from tkinter import *
+import time
+
+def timing():
+    current_time = time.strftime("%H : %M : %S")
+    clock.config(text=current_time)
+    #clock will change after every 200 microseconds
+    clock.after(200,timing)
+ 
+
+root=Tk()
+
+root.geometry("600x300")
+clock=Label(root,font=("times",60,"bold"),bg="blue")
+clock.grid(row=2,column=2,pady=25,padx=100)
+timing()
+ 
+
+digital=Label(root,text="AskPython's Digital Clock",font="times 24 bold")
+digital.grid(row=0,column=2)
+ 
+nota=Label(root,text="hours        minutes        seconds",font="times 15 bold")
+nota.grid(row=3,column=2)
+ 
+root.mainloop()
 
 
 
