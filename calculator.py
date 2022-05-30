@@ -19,12 +19,12 @@ def modulus(a,b):
     answer=a%b
     return answer
 
-def exponent(b,):
+def exponent(b):
     answer=b**b
     return answer
 
 def cube(a,):
-    answer=a**a
+    answer=a*a*a
     return answer
 
 def factorial(a):
